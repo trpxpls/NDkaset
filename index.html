@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดการสินค้า - หน้าหลัก</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <h1>ระบบจัดการสินค้า</h1>
+            <div class="header-buttons">
+                <button id="goToIncomingProductsPageBtn" class="action-btn">ดูรายการสินค้าเข้า</button>
+                <button id="goToOutgoingProductsPageBtn" class="action-btn">ดูรายการสินค้าออก</button>
+                <button id="goToAllProductsPageBtn" class="action-btn">ดูสินค้าทั้งหมด</button>
+            </div>
+        </div>
+
+        <div class="add-product-section">
+            <input type="text" id="productName" placeholder="ชื่อสินค้า" class="product-input" />
+            <input type="number" id="productQuantity" placeholder="จำนวน" min="1" value="1" class="product-input quantity-input" />
+            <select id="productUnit" class="product-input unit-select">
+                <option value="แกลอน">แกลอน</option>
+                <option value="แผ่น">แผ่น</option>
+                <option value="กระสอบ">กระสอบ</option>
+                <option value="ขวด">ขวด</option>
+                <option value="ม้วน">ม้วน</option>
+                <option value="ชิ้น">ชิ้น</option>
+            </select>
+            <button id="addProductBtn">เพิ่มสินค้า</button>
+        </div>
+
+        <div class="message-area">
+            <p>ใช้หน้านี้เพื่อเพิ่มหรือแก้ไขสินค้าเท่านั้น โปรดใช้ปุ่มด้านบนเพื่อดูรายงานสินค้า</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
