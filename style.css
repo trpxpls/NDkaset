@@ -1,0 +1,355 @@
+/* นำเข้าฟอนต์ Sarabun จาก Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap');
+
+body {
+    font-family: 'Sarabun', sans-serif; /* ใช้ฟอนต์ Sarabun */
+    background: linear-gradient(to right, #e0f2f7, #c8e6c9); /* พื้นหลังไล่เฉดสี */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูมีมิติ */
+    width: 100%;
+    max-width: 650px; /* เพิ่ม max-width เพื่อรองรับช่องใหม่ */
+    text-align: center;
+    animation: fadeIn 0.8s ease-out; /* เพิ่ม Animation ตอนโหลด */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-section {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.header-section h1 {
+    color: #0056b3;
+    margin-bottom: 15px;
+    font-size: 2em; /* ขนาดใหญ่ขึ้น */
+    font-weight: 600; /* ทำให้หัวข้อหนาขึ้น */
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* ให้ปุ่มขึ้นบรรทัดใหม่ได้ถ้าหน้าจอเล็ก */
+    gap: 10px; /* ช่องว่างระหว่างปุ่ม */
+    margin-top: 15px;
+}
+
+.header-buttons .action-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-grow: 1; /* ให้ปุ่มขยายเท่ากัน */
+    max-width: 180px; /* จำกัดความกว้างสูงสุด */
+}
+
+.header-buttons .action-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.add-product-section {
+    display: grid; /* ใช้ Grid สำหรับจัดวางฟอร์ม */
+    grid-template-columns: 1fr 1fr; /* แบ่งเป็น 2 คอลัมน์ */
+    gap: 15px; /* ช่องว่างระหว่าง input */
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05); /* เงาด้านใน */
+}
+
+.product-input {
+    width: calc(100% - 20px); /* ความกว้างเต็มหัก padding */
+    padding: 12px 10px;
+    margin: 0; /* ลบ margin เดิม */
+    border: 1px solid #c8d6e5;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* รวม padding ใน width */
+}
+
+.product-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.product-input.quantity-input {
+    text-align: center;
+}
+
+.unit-select {
+    appearance: none; /* ซ่อน default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-6.5%200-12.3%203.2-16.1%208.1-3.9%204.9-4.8%2011.6-2.6%2017.6l139.3%20202.6c3.6%205.2%209.5%208.4%2016.4%208.4%206.9%200%2012.8-3.2%2016.4-8.4l139.3-202.6c2.2-6.1%201.3-12.8-2.6-17.6z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px; /* เพิ่ม padding เพื่อไม่ให้ข้อความทับ arrow */
+}
+
+
+#addProductBtn {
+    background-color: #4CAF50; /* สีเขียว */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    grid-column: span 2; /* ปุ่มเพิ่มกิน 2 คอลัมน์ */
+}
+
+#addProductBtn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.message-area {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Product List Styling */
+#productList {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+    text-align: left;
+}
+
+#productList li {
+    background-color: #f0f8ff; /* สีฟ้าอ่อน */
+    border: 1px solid #d0e8f8;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* อนุญาตให้ข้อความห่อหุ้มได้ */
+    gap: 10px; /* ช่องว่างระหว่างแต่ละส่วนใน li */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#productList li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-info {
+    flex-grow: 1;
+    margin-right: 15px; /* เพิ่มพื้นที่ด้านขวา */
+    word-break: break-word; /* ให้ข้อความยาวๆ ขึ้นบรรทัดใหม่ */
+}
+
+.product-name {
+    font-weight: 600; /* หนาขึ้น */
+    color: #0056b3;
+    font-size: 1.15em;
+    display: block; /* ให้ขึ้นบรรทัดใหม่ */
+    margin-bottom: 5px;
+}
+
+.product-status-icon {
+    color: #28a745; /* สีเขียวสำหรับติ๊กถูก */
+    margin-left: 8px;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+.product-detail {
+    font-size: 0.95em;
+    color: #555;
+    display: block; /* ให้ขึ้นบรรทัดใหม่ */
+    margin-bottom: 3px;
+    font-weight: 500; /* ทำให้หนาขึ้นเล็กน้อย */
+}
+
+/* ส่วนใหม่: ตัวจัดการการแสดงผลวันที่และเวลาทั้งหมด */
+.product-date-details {
+    margin-top: 5px; /* ระยะห่างจากบรรทัดด้านบน (จำนวน: หน่วย) */
+    text-align: left; /* จัดชิดซ้าย */
+    width: 100%; /* ให้เต็มความกว้างใน product-info */
+}
+
+.product-combined-timestamps {
+    font-size: 0.85em;
+    color: #777;
+    font-weight: 500; /* ทำให้หนาขึ้นเล็กน้อย */
+    display: block; /* ให้ spans นี้อยู่บรรทัดของตัวเอง */
+    line-height: 1.4; /* ปรับ line-height เพื่อให้อ่านง่ายขึ้น */
+}
+
+/* ลบหรือคอมเมนต์สไตล์เดิมสำหรับแต่ละ timestamp เพื่อให้ใช้ .product-combined-timestamps แทน */
+/*
+.product-timestamp,
+.last-edited-timestamp,
+.outgoing-timestamp,
+.last-incoming-timestamp {
+    font-size: 0.85em;
+    color: #777;
+    display: block;
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+.outgoing-timestamp {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.last-incoming-timestamp {
+    color: #17a2b8;
+    font-weight: 600;
+}
+*/
+
+.product-actions {
+    display: flex;
+    gap: 8px; /* ช่องว่างระหว่างปุ่ม */
+    flex-wrap: wrap; /* ให้ปุ่มขึ้นบรรทัดใหม่ได้ */
+    margin-top: 10px; /* เพิ่มระยะห่างด้านบนเมื่ออยู่คนละบรรทัด */
+}
+
+.action-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    white-space: nowrap; /* ไม่ให้ข้อความปุ่มห่อหุ้ม */
+}
+
+.action-btn:hover {
+    transform: translateY(-1px);
+}
+
+.action-btn.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.action-btn.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+.action-btn.edit-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.action-btn.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.action-btn.dispatch-btn {
+    background-color: #ff7f00; /* สีส้ม */
+    color: white;
+}
+
+.action-btn.dispatch-btn:hover {
+    background-color: #e66a00;
+}
+
+.action-btn.incoming-btn {
+    background-color: #17a2b8; /* สีฟ้าอมเขียว */
+    color: white;
+}
+
+.action-btn.incoming-btn:hover {
+    background-color: #138496;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 25px;
+    }
+
+    .header-section h1 {
+        font-size: 1.8em;
+    }
+
+    .header-buttons {
+        flex-direction: column; /* วางปุ่มในแนวตั้ง */
+        align-items: stretch; /* ให้ปุ่มยืดเต็มความกว้าง */
+    }
+
+    .add-product-section {
+        grid-template-columns: 1fr; /* คอลัมน์เดียวสำหรับมือถือ */
+        gap: 8px;
+    }
+
+    .product-input, .unit-select, #addProductBtn {
+        width: 100%; /* ทำให้เต็มความกว้าง */
+    }
+
+    /* ให้ช่องชื่อสินค้าอยู่แถวแรก ช่องจำนวนและหน่วยอยู่แถวสอง ปุ่มเพิ่มอยู่แถวสอง */
+    #productName {
+        grid-column: span 1; /* กลับเป็น 1 คอลัมน์ */
+    }
+    #addProductBtn {
+        grid-column: span 1; /* กลับเป็น 1 คอลัมน์ */
+    }
+
+    #productList li {
+        flex-direction: column; /* วางข้อมูลสินค้าและปุ่มในแนวตั้ง */
+        align-items: flex-start; /* จัดชิดซ้าย */
+        padding: 12px 15px; /* ลด padding */
+        gap: 10px; /* ช่องว่างระหว่าง product-info กับ product-actions */
+    }
+
+    .product-info {
+        margin-right: 0; /* ลบ margin ด้านขวา */
+        width: 100%; /* ให้เต็มความกว้าง */
+    }
+
+    .product-actions {
+        width: 100%; /* ให้กลุ่มปุ่มเต็มความกว้าง */
+        justify-content: flex-start; /* จัดปุ่มไปทางซ้าย */
+    }
+}
+
+/* สำหรับมือถือขนาดเล็ก (น้อยกว่า 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 20px;
+    }
+
+    .header-section h1 {
+        font-size: 1.6em;
+    }
+}
